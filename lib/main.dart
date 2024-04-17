@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:reunion/firebase_options.dart';
 
-import 'package:reunion/auth_controller.dart';
-import 'package:reunion/sign_in.dart';
+import 'package:reunion/controller/auth_controller.dart';
+import 'package:reunion/screens/sign_in.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

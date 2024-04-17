@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reunion/utlis.dart';
+import 'package:reunion/utlis/utlis.dart';
 
 class ReusableButton extends StatelessWidget {
   final String title;
@@ -7,15 +7,15 @@ class ReusableButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final bool loading;
-  final ImageProvider? imageProvider; // Nullable image provider
+  final ImageProvider? imageProvider;
 
   ReusableButton({
     required this.title,
     required this.onTap,
-    this.color = Colors.green, // Changed to green color
+    this.color = Colors.green,
     this.textColor = Colors.black,
     this.loading = false,
-    this.imageProvider, // Added nullable image provider parameter
+    this.imageProvider,
   });
 
   @override
@@ -23,32 +23,32 @@ class ReusableButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Material(
-        borderRadius: BorderRadius.circular(25), // Rounded border
+        borderRadius: BorderRadius.circular(25),
         child: Container(
-          height: 60, // Fixed height for the container
+          height: 60,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 246, 245, 245), // Container color
-            borderRadius: BorderRadius.circular(25), // Rounded border
+            color: Color.fromARGB(255, 246, 245, 245),
+            borderRadius: BorderRadius.circular(25),
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (imageProvider != null) // Conditionally show the image
+              if (imageProvider != null)
                 Container(
-                  width: 35, // Fixed width for the image
-                  height: 35, // Fixed height for the image
+                  width: 35,
+                  height: 35,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle, // Make the image circular
+                    shape: BoxShape.circle,
                   ),
                   child: ClipOval(
                     child: Image(
                       image: imageProvider!,
-                      fit: BoxFit.cover, // Adjust the fit as needed
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
-              SizedBox(width: 8), // Spacer between image and text
+              SizedBox(width: 8),
               Expanded(
                 child: loading
                     ? Center(child: CircularProgressIndicator())

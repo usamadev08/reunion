@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reunion/auth_controller.dart';
-import 'package:reunion/sign_in.dart';
-import 'package:reunion/widgets/Reuseable.dart';
+import 'package:reunion/controller/auth_controller.dart';
+import 'package:reunion/screens/sign_up.dart';
 
-class SignUp extends StatelessWidget {
+import 'package:reunion/widgets/Reuseable.dart'; // Assuming ReusableButton is in ReusableButton.dart
+
+class SignIn extends StatelessWidget {
   final AuthController authController = Get.find();
 
-  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -32,14 +32,14 @@ class SignUp extends StatelessWidget {
                 height: screenHeight * 0.022,
               ),
               const Text(
-                'SIGN UP',
+                'SIGN IN',
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: screenHeight * 0.011,
               ),
               const Text(
-                'Looks like you don’t have an account. Let’s create a new account for you.',
+                'Please enter your credentials to continue',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(
@@ -49,25 +49,6 @@ class SignUp extends StatelessWidget {
                 key: _formKey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: nameController,
-                      decoration: const InputDecoration(
-                        labelText: "Name",
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 246, 245, 245),
-                      ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter a Name';
-                        }
-                        return null;
-                      },
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.021,
-                    ),
                     TextFormField(
                       controller: emailController,
                       decoration: const InputDecoration(
@@ -111,12 +92,13 @@ class SignUp extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        if (_formKey.currentState!.validate()) {
-                          String name = nameController.text.trim();
-                          String email = emailController.text.trim();
-                          String password = passwordController.text.trim();
-                          authController.signUpWithEmailAndPassword(
+                        String email = emailController.text.trim();
+                        String password = passwordController.text.trim();
+                        if (email.isNotEmpty && password.isNotEmpty) {
+                          authController.signInWithEmailAndPassword(
                               email, password);
+                        } else {
+                          Get.snackbar('Error', 'Please fill in all fields.');
                         }
                       },
                       child: Container(
@@ -124,7 +106,7 @@ class SignUp extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Center(
                           child: Text(
-                            "CREATE ACCOUNT",
+                            "LOGIN",
                             style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
@@ -174,15 +156,15 @@ class SignUp extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Already have an account?',
+                            'Dont have an account?',
                             style: TextStyle(fontSize: 16),
                           ),
                           TextButton(
                             onPressed: () {
-                              Get.to(() => SignIn());
+                              Get.to(() => SignUp());
                             },
                             child: const Text(
-                              "Sign-in",
+                              "Sign-up",
                               style: TextStyle(
                                   color: Color(0xFF2c8485), fontSize: 16),
                             ),
