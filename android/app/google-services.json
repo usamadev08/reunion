@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393307584987",
+    "project_id": "reunion-62bcd",
+    "storage_bucket": "reunion-62bcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393307584987:android:e35727a43c62e1e9390ffe",
+        "android_client_info": {
+          "package_name": "com.example.reunion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0xF5ggV-TT-5jS_hgBfd1We6PEgeuqOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
