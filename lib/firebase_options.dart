@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '393307584987',
     projectId: 'reunion-62bcd',
     storageBucket: 'reunion-62bcd.appspot.com',
+    androidClientId: '393307584987-l29kd5vecn84foltnetofag2p18e130d.apps.googleusercontent.com',
+    iosClientId: '393307584987-ed0m17sjvqnkpkpe70hneq4385g2dhqi.apps.googleusercontent.com',
     iosBundleId: 'com.example.reunion',
   );
 
@@ -72,6 +74,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '393307584987',
     projectId: 'reunion-62bcd',
     storageBucket: 'reunion-62bcd.appspot.com',
+    androidClientId: '393307584987-l29kd5vecn84foltnetofag2p18e130d.apps.googleusercontent.com',
+    iosClientId: '393307584987-ed0m17sjvqnkpkpe70hneq4385g2dhqi.apps.googleusercontent.com',
     iosBundleId: 'com.example.reunion',
   );
 

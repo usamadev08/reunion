@@ -12,7 +12,20 @@
           "package_name": "com.example.reunion"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "393307584987-l29kd5vecn84foltnetofag2p18e130d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reunion",
+            "certificate_hash": "c96500de2c3b5693a2ae21e8801455ec6c08735c"
+          }
+        },
+        {
+          "client_id": "393307584987-qjuvdddfqvba0f3sdaja4cdt8kg0hmgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC0xF5ggV-TT-5jS_hgBfd1We6PEgeuqOM"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393307584987-qjuvdddfqvba0f3sdaja4cdt8kg0hmgi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "393307584987-ed0m17sjvqnkpkpe70hneq4385g2dhqi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.reunion"
+              }
+            }
+          ]
         }
       }
     }

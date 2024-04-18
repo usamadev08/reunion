@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:reunion/controller/auth_controller.dart';
 import 'package:reunion/screens/sign_in.dart';
 import 'package:reunion/widgets/Reuseable.dart';
@@ -147,7 +148,9 @@ class SignUp extends StatelessWidget {
                     ),
                     ReusableButton(
                       title: "Continue with Google",
-                      onTap: () {},
+                      onTap: () {
+                        authController.authenticateWithGoogle(context: context);
+                      },
                       imageProvider: AssetImage('assets/google.png'),
                     ),
                     SizedBox(
